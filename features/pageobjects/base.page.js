@@ -1,7 +1,7 @@
-const { browser } = require('@wdio/globals')
+const { browser } = require('@wdio/globals');
 
 module.exports = class BasePage {
-  get currentUrl() {
-    return browser.getUrl()
-  }
-}
+    get currentUrl() {
+        return browser.getUrl();
+    }
+};

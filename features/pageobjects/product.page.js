@@ -1,12 +1,11 @@
-const { $ } = require('@wdio/globals')
+const { $ } = require('@wdio/globals');
 const BasePage = require('./base.page');
 
 class ProductPage extends BasePage {
+    get addToCartBtn() {return $('a=В корзину');}
+    get productAddedToCardMessage() {return $('=Товар добавлен в корзину');}
 
-  get addToCartBtn(){return $('a=В корзину')}
-  get productAddedToCardMessage(){return $('=Товар добавлен в корзину')}
-
-  clickAddToCartBtn = () => this.addToCartBtn.click()
+    clickAddToCartBtn = () => this.addToCartBtn.click();
 }
 
 module.exports = new ProductPage();
