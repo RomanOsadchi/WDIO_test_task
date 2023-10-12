@@ -10,7 +10,7 @@ class HomePage extends BasePage {
     return $('.fast-search__input')
   }
   open = () => browser.url('')
-  clickEnterButton = async () => await this.enterButton.click()
+  clickLoginButton = async () => await this.enterButton.click()
   typeInSearchInput = async (text) => await this.searchInput.setValue(text)
 }
 

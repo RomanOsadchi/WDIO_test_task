@@ -8,5 +8,6 @@ npm install
 To run the tests with the generation of an Allure report, use the following command:
 ```
 npm run wdio
+npm run report
 ```
 If you are using Windows, run the command in Git Bash.

@@ -28,14 +28,23 @@ Given(/^I am on the (\w+) page$/, async (page) => {
     await pages[page].open()
 });
 
-When('I click on enter button', async () => {
-    await homePage.clickEnterButton()
+When('I click on login button', async () => {
+    await homePage.clickLoginButton()
 })
 
 When('I login with saved credentials', async () => {
     await browser.pause()
     await loginPage.login()
 });
+
+When('I click on recovery link', async () => {
+    await loginPage.clickRecoveryLink()
+})
+
+Then('I should be redirected {string} url', async (url) => {
+    const curUrl = await browser.getUrl()
+    expect(curUrl).toMatch(url)
+})
 
 Then('I should see recaptcha verification box', async () => {
     await expect(loginPage.recaptcha).toBeDisplayedInViewport()
@@ -64,6 +73,7 @@ Then('I should be redirected to product page', async () => {
 
 When('I click on put in cart button', async () =>{
     await productPage.clickAddToCartBtn()
+    expect(await productPage.productAddedToCardMessage).toBeDisabled()
 })
 
 Then(/I can see that (.+) in the cart/, async (product) => {

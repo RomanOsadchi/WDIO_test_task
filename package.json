@@ -12,6 +12,7 @@
     "wdio-wait-for": "^3.0.7"
   },
   "scripts": {
-    "wdio": "rm -rf allure-results && wdio run ./wdio.conf.js && allure generate --clean report . && allure serve"
+    "wdio": "rm -rf allure-results && wdio run ./wdio.conf.js",
+    "report": "allure generate --clean report . && allure serve"
   }
 }
