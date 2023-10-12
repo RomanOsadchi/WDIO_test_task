@@ -72,7 +72,7 @@ Then('I should be redirected to product page', async () => {
 
 When('I click on put in cart button', async () => {
     await productPage.clickAddToCartBtn();
-    await expect(await productPage.productAddedToCardMessage).toBeDisabled();
+    await expect(await productPage.productAddedToCardMessage).toBeDisplayed();
 });
 
 Then(/I can see that (.+) in the cart/, async (product) => {
